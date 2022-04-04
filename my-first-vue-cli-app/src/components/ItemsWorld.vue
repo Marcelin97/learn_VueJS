@@ -14,6 +14,7 @@
 				:addToShoppingCart="addToShoppingCart"
 				:name="item.name"
 				:image="item.image"
+				:price="item.price"
 				:quantity="item.quantity"
 				:inStock="item.inStock"
 				:key="item.name"
@@ -23,17 +24,6 @@
 		<aside class="shopping-cart">
 			<h2>Panier d'achat : {{ shoppingCart }} articles</h2>
 		</aside>
-
-		<h2>Contactez nous</h2>
-		<p>Adresse : {{ address }}</p>
-		<p>Téléphone : {{ phone }}</p>
-		<p>Email : {{ email }}</p>
-		<p>Horaires :</p>
-		<ul>
-			<li>L-V: 06:00 à 16:00</li>
-			<li>Samedi: 07:00 à 14:00</li>
-			<li>Dimanche: 07:00 à 12:00</li>
-		</ul>
 		<footer class="footer">
 			<p>{{ copyright }}</p>
 		</footer>
@@ -50,9 +40,6 @@ export default {
 	},
 	data() {
 		return {
-			address: "18 avenue du Beurre, Paris, France",
-			email: "hello@cafewithavue.bakery",
-			phone: "01 88 88 88 88",
 			restaurantName: "La belle vue",
 			shoppingCart: 0,
 			simpleMenu: [
@@ -63,7 +50,8 @@ export default {
 						alt: "Un croissant"
 					},
 					inStock: true,
-					qty: this.quantity
+					qty: this.quantity,
+					price: 2.99
 				},
 				{
 					name: "Baguette de pain",
@@ -72,7 +60,8 @@ export default {
 						alt: "Quatre baguettes de pain"
 					},
 					inStock: true,
-					qty: this.quantity
+					qty: this.quantity,
+					price: 4.99
 				},
 				{
 					name: "Éclair",
@@ -81,7 +70,8 @@ export default {
 						alt: "Éclair au chocolat"
 					},
 					inStock: false,
-					qty: this.quantity
+					qty: this.quantity,
+					price: 1.99
 				}
 			]
 		}
