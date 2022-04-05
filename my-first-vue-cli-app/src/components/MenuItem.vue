@@ -9,27 +9,23 @@ export default {
 	},
 	computed: {
 		generatedPrice() {
-			if (this.onSale) {
-				return (this.price * 0.9).toFixed(2)
-			} else {
-				return this.price
-			}
+			return this.price
 		}
 	},
-	beforeMount() {
-		const today = new Date().getDate()
+	// beforeMount() {
+	// 	const today = new Date().getDate()
 
-		if (today % 2 === 0) {
-			this.onSale = true
-		}
-	}
+	// 	if (today % 2 === 0) {
+	// 		this.onSale = true
+	// 	}
+	// }
 };
 </script>
 
 <template>
   <div class="menu-item">
     <img class="menu-item__image" :src="image.source" :alt="image.alt" />
-    <div>
+    <div class="item__image">
       <h3>{{ name }}</h3>
       <p>Prix : {{ generatedPrice }}</p>
       <p v-if="inStock">En stock</p>
@@ -43,4 +39,16 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+.menu-item{
+	height:25em;
+	margin-top: 2em;
+	border:1px solid
+}
+img{
+	height:10em;
+}
+.item__image{
+	height:5em;
+}
+</style>
